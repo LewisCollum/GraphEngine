@@ -9,6 +9,9 @@
 #include <time.h>
 #include <stdlib.h>
 
+#include <unordered_map>
+#include <utility>
+
 // ALGORITHMS
 Graph match_GS(const Graph&);
 
@@ -17,6 +20,7 @@ void printGraph(const Graph&);
 void printSize(const GraphComponent&);
 void histogramGraphSize(const Graph&);
 
+// delete this comment
 class Cell {
 public:
 	int cellType;
@@ -68,11 +72,20 @@ public:
 
 };
 
+class TestMap {
+	std::unordered_map<int, int> map;
+
+};
+
 int main() {
 	//std::srand(time(NULL));
 	std::srand(1);
 	Map<10, 10> m;
 	m.setup();
+
+	//std::unordered_map<int, Vertex> myMap;
+	Vertex z;
+	//myMap.emplace(std::make_pair(1, 2), z);
 
 	Vertex a;
 	Graph t = { new Vertex(), new Vertex(), new Vertex() };
@@ -166,5 +179,3 @@ Graph match_GS(const Graph& p) {
 	
 	return ret;
 }
-
-//Graph randomizeGraph
